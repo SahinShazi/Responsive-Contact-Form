@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .contact-container {
+      width: 100%;
+      max-width: 800px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-header {
+      background: #2575fc;
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .form-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .form-header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .form-body {
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .full-width {
+      grid-column: span 2;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 15px;
+      border: 2px solid #e1e5ee;
+      border-radius: 10px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      border-color: #2575fc;
+      box-shadow: 0 0 0 4px rgba(37, 117, 252, 0.1);
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    button {
+      background: #2575fc;
+      color: white;
+      border: none;
+      padding: 16px 40px;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: block;
+      margin: 0 auto;
+      box-shadow: 0 4px 15px rgba(37, 117, 252, 0.3);
+    }
+
+    button:hover {
+      background: #1a68e8;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 117, 252, 0.4);
+    }
+
+    .form-footer {
+      text-align: center;
+      padding: 25px;
+      background: #f8f9fa;
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .form-body {
+        grid-template-columns: 1fr;
+      }
+
+      .full-width {
+        grid-column: span 1;
+      }
+
+      .form-header h1 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .form-body {
+        padding: 25px;
+      }
+
+      .form-header {
+        padding: 20px;
+      }
+
+      .form-header h1 {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="contact-container">
+    <div class="form-header">
+      <h1>Contact Us</h1>
+      <p>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+    </div>
+    
+    <form action="https://formspree.io/f/xblynlrq"
+    method="POST"
+    class="form-body">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" placeholder="First name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" placeholder="Last name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Email address" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Phone number">
+      </div>
+
+      <div class="form-group full-width">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="How can we help you?" required>
+      </div>
+
+      <div class="form-group full-width">
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" placeholder="Please type your message here..." required></textarea>
+      </div>
+
+      <div class="form-group full-width">
+        <label for="department">Department</label>
+        <select id="department" name="department" required>
+          <option value="" disabled selected>Select a department</option>
+          <option value="sales">Sales</option>
+          <option value="support">Customer Support</option>
+          <option value="billing">Billing</option>
+          <option value="technical">Technical Support</option>
+        </select>
+      </div>
+
+      <div class="form-group full-width">
+        <button type="submit">Send Message</button>
+      </div>
+    </form>
+
+    <div class="form-footer">
+      <p>© 2025 Sahin Enam. All rights reserved. | Privacy Policy</p>
+    </div>
+  </div>
+</body>
+
+</html>
